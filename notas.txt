@@ -1,0 +1,23 @@
+1.- crear la vista (views-.php)
+2.- controlador principal:
+crear la funcion que va llevar a la vista que acabo de crear 
+(dentro de los parametros de esa funcion va el nombre del archivo php 
+donde esta el codigo de la vista sin la extesion)
+3.- en las rutas: 
+declarar una variable para la ruta que estoy creando, 
+nombrarla con un alias y asignarle la ruta la cual lleva
+ ('nombre del controlador principal en el que defini la funcion que lleva a la vista
+  */*  nombre de la funcion que defini que lleva a la vista')
+
+  4.- si la vista ya existe en las etiquetas a, se puede mencionar solo el nombre de la vista
+
+5.- crear un modelo principal se puede poner varias funciones para crear usuario, borrar usuario etc, con los queries que necesiten
+  - para hacer un login sigo los pasos de crear la vista y la ruta pero el mandar las variables es mas facil hacerlo por post.
+  en el action del form del archivo uso la ruta de la funcion que valida el login y lo mando con el submit
+- en el archivo la url base del servidor donde tenemos alojada la pagina
+- en el archivo de autoload recibo la url y el form en una variable autoload que se llama "helper", tambien recibo "database" y "seesion" en otra 
+variable autoload que se llama libraries.
+- en el controlador principal donde creo las funciones se agrega un seesion destroy para que se destuya la sesion, se crea una variable de sesion para
+que si existe mande a la vista principal y si no que redireccione al inicio.
+se creó una funcion para validar el login donde se reciben por post las variables, luego con un foreach se recorre el resultado del query y se guarda 
+en una variable de session.
